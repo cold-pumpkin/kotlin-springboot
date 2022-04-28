@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+  session:
+    store-type: jdbc
+  logging:
+    level:
+      org.hibernate.SQL: debug
+
+  # Test OAuth
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client_id: test
+            client_secret: secret
+            scope:
+              scope:
+                - profile
+                - email
