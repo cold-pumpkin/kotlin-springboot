@@ -19,3 +19,19 @@ notifications:
   email:
     recipients:
       - pch4623@gmail.com
+
+before_deploy:
+  - zip -r kotlin-springboot *
+  - mkdir -p deploy
+  - mv kotlin-springboot.zip deploy/kotlin-springboot.zip
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: philip-springboot-build
+    region: us-east-2
+    skip_cleanup: true
+    acl: private  # zip 파일 접근을 private 으로
+    local_dir: deploy
+    wait_until_deployed: true
