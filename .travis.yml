@@ -35,3 +35,5 @@ deploy:
     acl: private  # zip 파일 접근을 private 으로
     local_dir: deploy
     wait_until_deployed: true
+    on:
+      all_branches: true
