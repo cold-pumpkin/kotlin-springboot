@@ -5,7 +5,7 @@ import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.springframework.mock.env.MockEnvironment
 
-class ProfileControllerUnitTest {
+internal class ProfileControllerUnitTest {
 
     @Test
     @DisplayName("real profile이 조회된다")
