@@ -26,7 +26,6 @@ dependencies {
     implementation("junit:junit:4.13.1")
     implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
     implementation("org.springframework.session:spring-session-jdbc")
-    implementation("org.projectlombok:lombok:1.18.20")
     runtimeOnly("com.h2database:h2")
     runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
