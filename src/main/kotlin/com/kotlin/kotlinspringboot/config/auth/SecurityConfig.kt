@@ -16,7 +16,7 @@ class SecurityConfig (private val customOAuth2UserService: CustomOAuth2UserServi
                 .headers().frameOptions().disable() // h2-console 화면을 사용하기 위해 해당 옵션들을 disable
                 .and()
                     .authorizeRequests()    // URL별 권한 관리를 설정하는 옵션의 시작점
-                    .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**")
+                    .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**", "/profile")
                         .permitAll()  // 전체 열람 권한
                     .antMatchers("/api/v1/**").hasRole(Role.USER.name)
                     .anyRequest().authenticated()   // 나머지 URL은 모두 인증된(로그인한) 사용자

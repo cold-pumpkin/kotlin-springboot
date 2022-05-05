@@ -24,7 +24,7 @@ import org.springframework.test.web.servlet.put
 @TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)
 @AutoConfigureMockMvc
 @WithMockUser(roles = ["USER"])
-internal class PostsApiControllerTest(
+internal class PostsApiControllerUnitTest(
     private val mockMvc: MockMvc,
     private val objectMapper: ObjectMapper,
     private val postsRepository: PostsRepository
